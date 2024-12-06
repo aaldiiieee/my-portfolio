@@ -2,26 +2,22 @@
 
 import { useState } from "react";
 import SectionTemplate from "@/components/templates/SectionTemplate";
-import { HeaderTitle, ButtonTab, ExperienceList, StackList } from "@/components/ui";
-
+import Link from "next/link";
+import GitHubCalendar from "react-github-calendar";
 import {
-  SiNextdotjs,
-  SiJquery,
-  SiTailwindcss,
-  SiMysql,
-} from "react-icons/si";
+  HeaderTitle,
+  ButtonTab,
+  ExperienceList,
+  StackList,
+  ButtonSubmit,
+} from "@/components/ui";
 
-import {
-  DiJavascript1,
-  DiReact,
-  DiGit,
-  DiCss3,
-} from "react-icons/di";
-
+import { SiNextdotjs, SiJquery, SiTailwindcss, SiMysql } from "react-icons/si";
+import { DiJavascript1, DiReact, DiGit, DiCss3 } from "react-icons/di";
 import { FaLaravel, FaBootstrap } from "react-icons/fa";
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState("about");
+  const [activeTab, setActiveTab] = useState("introduction");
 
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
@@ -43,9 +39,15 @@ export default function Home() {
   const stacks = [
     { icon: <SiNextdotjs className="text-7xl w-full" />, name: "Next.js" },
     { icon: <SiJquery className="text-7xl w-full" />, name: "jQuery" },
-    { icon: <SiTailwindcss className="text-7xl w-full" />, name: "Tailwind CSS" },
+    {
+      icon: <SiTailwindcss className="text-7xl w-full" />,
+      name: "Tailwind CSS",
+    },
     { icon: <SiMysql className="text-7xl w-full" />, name: "MySQL" },
-    { icon: <DiJavascript1 className="text-7xl w-full" />, name: "Java Script" },
+    {
+      icon: <DiJavascript1 className="text-7xl w-full" />,
+      name: "Java Script",
+    },
     { icon: <DiReact className="text-7xl w-full" />, name: "React" },
     { icon: <DiGit className="text-7xl w-full" />, name: "Git" },
     { icon: <DiCss3 className="text-7xl w-full" />, name: "CSS3" },
@@ -62,6 +64,21 @@ export default function Home() {
         <h3 className="hero-text md:text-6xl text-5xl text-white font-bold mt-5">
           I&apos;m Aldi, a Frontend Developer.
         </h3>
+
+        <div className="flex justify-center items-center mt-8 gap-4">
+          <ButtonSubmit
+            text="Contact Me"
+            type="submit"
+            className="bg-green-400"
+          />
+          <Link
+            href={"/pdf/CV_Pramudya Reynaldi Salim_2024.pdf"}
+            target="_blank"
+            className="bg-red-400 text-white btn__submit p-4 md:text-2xl rounded text-center"
+          >
+            Download CV
+          </Link>
+        </div>
       </SectionTemplate>
 
       <HeaderTitle title="About" className="bg-green-400" />
@@ -69,12 +86,13 @@ export default function Home() {
       <div className="grid md:grid-cols-5 grid-cols-12 gap-4">
         <div className="md:col-span-1 col-span-12 flex flex-col gap-4">
           <ButtonTab
-            onClick={() => handleTabChange("about")}
+            onClick={() => handleTabChange("introduction")}
             className={`${
-              activeTab === "about" && "shadow-none translate-x-1 translate-y-1"
+              activeTab === "introduction" &&
+              "shadow-none translate-x-1 translate-y-1"
             }`}
           >
-            About
+            Introduction
           </ButtonTab>
           <ButtonTab
             onClick={() => handleTabChange("experience")}
@@ -97,10 +115,10 @@ export default function Home() {
         </div>
 
         <div className="md:col-span-4 col-span-12">
-          {activeTab === "about" && (
+          {activeTab === "introduction" && (
             <SectionTemplate className="bg-purple-400 text-white w-full h-full">
               <h4 className="hero-text md:text-6xl text-5xl text-white font-bold">
-                About Me
+                Introduction
               </h4>
               <div className="mt-4 bg-purple-200 shadow-section border-2 border-black rounded p-4 text-black">
                 <p className="text-lg">
@@ -118,9 +136,10 @@ export default function Home() {
                   </span>{" "}
                   I focus on delivering optimal user experiences and efficient,
                   scalable solutions. I thrive on learning new technologies and
-                  exploring innovative approaches to solve development challenges.
-                  For me, web development is not just about writing code but
-                  creating value and meaningful impact through technology.{" "}
+                  exploring innovative approaches to solve development
+                  challenges. For me, web development is not just about writing
+                  code but creating value and meaningful impact through
+                  technology.{" "}
                   <span className="font-bold text-purple-800 italic">
                     Open to collaboration, discussions, and new opportunities.
                   </span>{" "}
@@ -133,7 +152,7 @@ export default function Home() {
           {activeTab === "experience" && (
             <SectionTemplate className="bg-blue-400 text-white w-full h-full">
               <h1 className="hero-text md:text-6xl text-5xl text-white font-bold">
-                Experience
+                My Experience
               </h1>
               <ExperienceList experiences={experiences} />
             </SectionTemplate>
@@ -142,7 +161,7 @@ export default function Home() {
           {activeTab === "skills" && (
             <SectionTemplate className="bg-red-400 text-white w-full h-full">
               <h4 className="hero-text md:text-6xl text-5xl text-white font-bold">
-                Skills
+                My Skills
               </h4>
               <div className="grid md:grid-cols-5 grid-cols-2 gap-3 mt-4">
                 <StackList stacks={stacks} />
@@ -151,6 +170,16 @@ export default function Home() {
           )}
         </div>
       </div>
+
+      <HeaderTitle title="Days I Code" className="bg-yellow-400 mb-8" />
+
+      <GitHubCalendar
+        username="aaldiiieee"
+        blockSize={16}
+        blockMargin={5}
+        fontSize={16}
+        colorScheme="light"
+      />
     </>
   );
 }

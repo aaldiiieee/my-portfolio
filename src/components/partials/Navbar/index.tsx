@@ -6,9 +6,8 @@ import Link from "next/link";
 
 const Navbar = () => {
   const NavLink = [
-    { name: "About", href: "/" },
     { name: "Projects", href: "/projects" },
-    { name: "Contact", href: "/contact" },
+    { name: "Blog", href: "/blog" },
   ];
 
   return (
