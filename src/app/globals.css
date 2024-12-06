@@ -8,19 +8,29 @@
 
 @layer base {
   .btn__submit {
-    background: var(--btn-submit);
     box-shadow: #000 4px 4px 0px 0px;
-    border: 1px solid #000;
+    border: 2px solid #000;
     width: 100%;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
+    @apply transition-all
   }
 
   .btn__submit:hover {
     box-shadow: none;
+    @apply translate-y-1 translate-x-1
   }
+}
+
+.bg-partials {
+  @apply bg-purple-800 text-white
+}
+
+.hero-text {
+  text-shadow: 4px 4px #000;
+  -webkit-text-stroke: 1px black;
 }
 
 .container {
@@ -40,13 +50,7 @@
 
 @media (max-width: 992px) {
   .container {
-    max-width: 720px;
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    max-width: 540px;
+    max-width: 840px;
   }
 }
 
