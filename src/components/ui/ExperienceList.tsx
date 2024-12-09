@@ -6,9 +6,10 @@ interface Experience {
 
 interface ExperienceListProps {
   experiences: Experience[];
+  className?: string;
 }
 
-const ExperienceList = ({ experiences }: ExperienceListProps) => {
+const ExperienceList = ({ experiences, className }: ExperienceListProps) => {
   return (
     <>
       {experiences.map((experience, index) => (
@@ -18,7 +19,7 @@ const ExperienceList = ({ experiences }: ExperienceListProps) => {
         >
           <div className="timeline-dot w-4 h-4 bg-white rounded-full absolute left-[2px] top-1"></div>
           <div className="timeline-line absolute w-1 bg-white left-2 top-6 bottom-0"></div>
-          <div className="ms-6 bg-blue-200 shadow-section border-2 border-black rounded p-4 text-black">
+          <div className={`ms-6 shadow-section border-2 border-black rounded p-4 text-black ${className}`}>
             <h3 className="text-2xl font-bold">{experience.role}</h3>
             <p className="text-lg">{experience.company}</p>
             <p className="text-sm mt-2">{experience.period}</p>

@@ -36,6 +36,19 @@ export default function Home() {
     },
   ];
 
+  const educations = [
+    {
+      role: "Universitas Pamulang",
+      company: "Teknik Informatika",
+      period: "March 2022 - June 2025",
+    },
+    {
+      role: "SMK Miftahul Jannah",
+      company: "Teknik Ketenagalistrikan",
+      period: "Sep 2021 - Jan 2022",
+    },
+  ];
+
   const stacks = [
     { icon: <SiNextdotjs className="text-7xl w-full" />, name: "Next.js" },
     { icon: <SiJquery className="text-7xl w-full" />, name: "jQuery" },
@@ -95,13 +108,13 @@ export default function Home() {
             Introduction
           </ButtonTab>
           <ButtonTab
-            onClick={() => handleTabChange("experience")}
+            onClick={() => handleTabChange("education")}
             className={`${
-              activeTab === "experience" &&
+              activeTab === "education" &&
               "shadow-none translate-x-1 translate-y-1"
             }`}
           >
-            Experience
+            Education
           </ButtonTab>
           <ButtonTab
             onClick={() => handleTabChange("skills")}
@@ -111,6 +124,15 @@ export default function Home() {
             }`}
           >
             Skills
+          </ButtonTab>
+          <ButtonTab
+            onClick={() => handleTabChange("experience")}
+            className={`${
+              activeTab === "experience" &&
+              "shadow-none translate-x-1 translate-y-1"
+            }`}
+          >
+            Experience
           </ButtonTab>
         </div>
 
@@ -149,12 +171,21 @@ export default function Home() {
             </SectionTemplate>
           )}
 
+          {activeTab === "education" && (
+            <SectionTemplate className="bg-pink-400 text-white w-full h-full">
+              <h1 className="hero-text md:text-6xl text-5xl text-white font-bold">
+                Education
+              </h1>
+              <ExperienceList experiences={educations} className="bg-pink-200" />
+            </SectionTemplate>
+          )}
+
           {activeTab === "experience" && (
             <SectionTemplate className="bg-blue-400 text-white w-full h-full">
               <h1 className="hero-text md:text-6xl text-5xl text-white font-bold">
                 My Experience
               </h1>
-              <ExperienceList experiences={experiences} />
+              <ExperienceList experiences={experiences} className="bg-blue-200" />
             </SectionTemplate>
           )}
 
