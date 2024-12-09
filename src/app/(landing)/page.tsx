@@ -45,7 +45,7 @@ export default function Home() {
     {
       role: "SMK Miftahul Jannah",
       company: "Teknik Ketenagalistrikan",
-      period: "Sep 2021 - Jan 2022",
+      period: "May 2017 - June 2020",
     },
   ];
 

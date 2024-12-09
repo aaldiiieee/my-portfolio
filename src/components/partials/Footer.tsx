@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -40,38 +40,25 @@ const Footer = () => {
           <h4 className="text-lg font-bold mb-4">Follow Me</h4>
           <div className="flex space-x-4">
             <Link
-              href="https://github.com/"
+              href="https://github.com/aaldiiieee"
               className="hover:text-gray-400 text-2xl"
               aria-label="GitHub"
+              target="_blank"
             >
               <FaGithub />
             </Link>
             <Link
-              href="https://linkedin.com/"
+              href="https://www.linkedin.com/in/pramudya-reynaldi-salim-88a8b8237/"
               className="hover:text-gray-400 text-2xl"
               aria-label="LinkedIn"
+              target="_blank"
             >
               <FaLinkedin />
-            </Link>
-            <Link
-              href="https://twitter.com/"
-              className="hover:text-gray-400 text-2xl"
-              aria-label="Twitter"
-            >
-              <FaTwitter />
-            </Link>
-            <Link
-              href="https://instagram.com/"
-              className="hover:text-gray-400 text-2xl"
-              aria-label="Instagram"
-            >
-              <FaInstagram />
             </Link>
           </div>
         </div>
       </div>
 
-      {/* Footer Bottom */}
       <div className="border-t-2 border-black mt-8 pt-4 text-center text-sm">
         <p>&copy; 2024 REY.TECH. All Rights Reserved.</p>
       </div>
