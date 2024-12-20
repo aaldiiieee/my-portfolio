@@ -1,13 +1,4 @@
-interface Experience {
-  role: string;
-  company: string;
-  period: string;
-}
-
-interface ExperienceListProps {
-  experiences: Experience[];
-  className?: string;
-}
+import { ExperienceListProps } from "@/app/@types/dummy";
 
 const ExperienceList = ({ experiences, className }: ExperienceListProps) => {
   return (

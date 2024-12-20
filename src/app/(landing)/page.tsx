@@ -4,6 +4,7 @@ import { useState } from "react";
 import SectionTemplate from "@/components/templates/SectionTemplate";
 import Link from "next/link";
 import GitHubCalendar from "react-github-calendar";
+import { educations, experiences } from "../data/dummy";
 import {
   HeaderTitle,
   ButtonTab,
@@ -22,32 +23,6 @@ export default function Home() {
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
   };
-
-  const experiences = [
-    {
-      role: "Frontend Developer",
-      company: "PT. Ifabula Digital Kreasi",
-      period: "Jul 2023 - Dec 2024",
-    },
-    {
-      role: "Production Planning and Inventory Control (PPIC) Intern",
-      company: "ADR Group of Companies",
-      period: "Sep 2021 - Jan 2022",
-    },
-  ];
-
-  const educations = [
-    {
-      role: "Universitas Pamulang",
-      company: "Teknik Informatika",
-      period: "March 2022 - June 2025",
-    },
-    {
-      role: "SMK Miftahul Jannah",
-      company: "Teknik Ketenagalistrikan",
-      period: "May 2017 - June 2020",
-    },
-  ];
 
   const stacks = [
     { icon: <SiNextdotjs className="text-7xl w-full" />, name: "Next.js" },
@@ -143,7 +118,7 @@ export default function Home() {
                 Introduction
               </h4>
               <div className="mt-4 bg-purple-200 shadow-section border-2 border-black rounded p-4 text-black">
-                <p className="text-lg">
+                <p className="text-md">
                   Hi, I’m Pramudya Reynaldi Salim, a passionate{" "}
                   <span className="font-bold text-purple-800 italic">
                     Frontend Developer
@@ -157,11 +132,17 @@ export default function Home() {
                     Laravel, Next.js, and Tailwind CSS,
                   </span>{" "}
                   I focus on delivering optimal user experiences and efficient,
-                  scalable solutions. I thrive on learning new technologies and
-                  exploring innovative approaches to solve development
-                  challenges. For me, web development is not just about writing
-                  code but creating value and meaningful impact through
-                  technology.{" "}
+                  scalable solutions. <br />
+                </p>
+
+                <p className="mt-4 text-md">
+                  I thrive on learning new technologies and exploring innovative
+                  approaches to solve development challenges. For me, web
+                  development is not just about writing code but creating value
+                  and meaningful impact through technology.{" "}
+                </p> 
+
+                <p className="mt-4 text-md">
                   <span className="font-bold text-purple-800 italic">
                     Open to collaboration, discussions, and new opportunities.
                   </span>{" "}
@@ -176,7 +157,10 @@ export default function Home() {
               <h1 className="hero-text md:text-6xl text-5xl text-white font-bold">
                 Education
               </h1>
-              <ExperienceList experiences={educations} className="bg-pink-200" />
+              <ExperienceList
+                experiences={educations}
+                className="bg-pink-200"
+              />
             </SectionTemplate>
           )}
 
@@ -185,7 +169,10 @@ export default function Home() {
               <h1 className="hero-text md:text-6xl text-5xl text-white font-bold">
                 My Experience
               </h1>
-              <ExperienceList experiences={experiences} className="bg-blue-200" />
+              <ExperienceList
+                experiences={experiences}
+                className="bg-blue-200"
+              />
             </SectionTemplate>
           )}
 
