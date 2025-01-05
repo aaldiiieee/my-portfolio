@@ -1,4 +1,4 @@
-import { ExperienceListProps } from "@/app/@types/dummy";
+import { ExperienceListProps } from "@/app/types/dummy";
 
 const ExperienceList = ({ experiences, className }: ExperienceListProps) => {
   return (
