@@ -4,7 +4,7 @@ export const experiences: Experience[] = [
   {
     role: "Frontend Developer",
     company: "PT. Ifabula Digital Kreasi",
-    period: "Jul 2023 - Dec 2024",
+    period: "Jul 2023 - Jan 2025",
   },
   {
     role: "Production Planning and Inventory Control (PPIC) Intern",

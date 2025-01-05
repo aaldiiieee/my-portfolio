@@ -1,16 +1,11 @@
-interface ButtonSubmitProps {
-  text: string;
-  type: "submit" | "reset" | "button";
-  className?: string;
-  onClick?: () => void;
-}
+import { ButtonProps } from "../@types/ui";
 
 const ButtonSubmit = ({
   text,
   type,
   className,
   onClick,
-}: ButtonSubmitProps) => {
+}: ButtonProps) => {
   return (
     <button
       className={`btn__submit p-4 md:text-2xl rounded ${className}`}
