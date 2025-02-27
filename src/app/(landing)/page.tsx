@@ -13,8 +13,8 @@ import {
   ButtonSubmit,
 } from "@/components/ui";
 
-import { SiNextdotjs, SiJquery, SiTailwindcss, SiMysql } from "react-icons/si";
-import { DiJavascript1, DiReact, DiGit, DiCss3 } from "react-icons/di";
+import { SiNextdotjs, SiJquery, SiTailwindcss, SiMysql, SiTypescript } from "react-icons/si";
+import { DiReact, DiGit } from "react-icons/di";
 import { FaLaravel, FaBootstrap } from "react-icons/fa";
 
 export default function Home() {
@@ -31,14 +31,10 @@ export default function Home() {
       icon: <SiTailwindcss className="text-7xl w-full" />,
       name: "Tailwind CSS",
     },
+    { icon: <SiTypescript className="text-7xl w-full" />, name: "TypeScript" },
     { icon: <SiMysql className="text-7xl w-full" />, name: "MySQL" },
-    {
-      icon: <DiJavascript1 className="text-7xl w-full" />,
-      name: "Java Script",
-    },
     { icon: <DiReact className="text-7xl w-full" />, name: "React" },
     { icon: <DiGit className="text-7xl w-full" />, name: "Git" },
-    { icon: <DiCss3 className="text-7xl w-full" />, name: "CSS3" },
     { icon: <FaLaravel className="text-7xl w-full" />, name: "Laravel" },
     { icon: <FaBootstrap className="text-7xl w-full" />, name: "Bootstrap" },
   ];
@@ -60,7 +56,7 @@ export default function Home() {
             className="bg-green-400"
           />
           <Link
-            href={"/pdf/CV_Pramudya Reynaldi Salim_2024.pdf"}
+            href={"/pdf/CV_2025_PRAMUDYA REYNALDI SALIM.pdf"}
             target="_blank"
             className="bg-red-400 text-white btn__submit p-4 md:text-2xl rounded text-center"
           >
@@ -113,37 +109,37 @@ export default function Home() {
 
         <div className="md:col-span-4 col-span-12">
           {activeTab === "introduction" && (
-            <SectionTemplate className="bg-purple-400 text-white w-full h-full">
+            <SectionTemplate className=" text-white w-full h-full">
               <h4 className="hero-text md:text-6xl text-5xl text-white font-bold">
                 Introduction
               </h4>
-              <div className="mt-4 bg-purple-200 shadow-section border-2 border-black rounded p-4 text-black">
+              <div className="mt-4 shadow-section border-2 border-black rounded p-4 text-black">
                 <p className="text-md">
                   Hi, I’m Pramudya Reynaldi Salim, a passionate{" "}
-                  <span className="font-bold text-purple-800 italic">
-                    Frontend Developer
-                  </span>{" "}
+                  <span className="font-bold italic">Frontend Developer</span>{" "}
                   dedicated to crafting{" "}
-                  <span className="font-bold text-purple-800 italic">
+                  <span className="font-bold italic">
                     Modern and Responsive Web Applications.
                   </span>{" "}
                   Proficient in{" "}
-                  <span className="font-bold text-purple-800 italic">
+                  <span className="font-bold italic">
                     Laravel, Next.js, and Tailwind CSS,
                   </span>{" "}
                   I focus on delivering optimal user experiences and efficient,
                   scalable solutions. <br />
                 </p>
-
-                <p className="mt-4 text-md">
+              </div>
+              <div className="mt-4 shadow-section border-2 border-black rounded p-4 text-black">
+                <p className="text-md">
                   I thrive on learning new technologies and exploring innovative
                   approaches to solve development challenges. For me, web
                   development is not just about writing code but creating value
                   and meaningful impact through technology.{" "}
-                </p> 
-
-                <p className="mt-4 text-md">
-                  <span className="font-bold text-purple-800 italic">
+                </p>
+              </div>
+              <div className="mt-4 shadow-section border-2 border-black rounded p-4 text-black">
+                <p className="text-md">
+                  <span className="font-bold italic">
                     Open to collaboration, discussions, and new opportunities.
                   </span>{" "}
                   Let’s connect and build something impactful together! 🚀
@@ -153,31 +149,25 @@ export default function Home() {
           )}
 
           {activeTab === "education" && (
-            <SectionTemplate className="bg-pink-400 text-white w-full h-full">
+            <SectionTemplate className="text-white w-full h-full">
               <h1 className="hero-text md:text-6xl text-5xl text-white font-bold">
                 Education
               </h1>
-              <ExperienceList
-                experiences={educations}
-                className="bg-pink-200"
-              />
+              <ExperienceList experiences={educations} />
             </SectionTemplate>
           )}
 
           {activeTab === "experience" && (
-            <SectionTemplate className="bg-blue-400 text-white w-full h-full">
+            <SectionTemplate className="text-white w-full h-full">
               <h1 className="hero-text md:text-6xl text-5xl text-white font-bold">
                 My Experience
               </h1>
-              <ExperienceList
-                experiences={experiences}
-                className="bg-blue-200"
-              />
+              <ExperienceList experiences={experiences} />
             </SectionTemplate>
           )}
 
           {activeTab === "skills" && (
-            <SectionTemplate className="bg-red-400 text-white w-full h-full">
+            <SectionTemplate className="text-white w-full h-full">
               <h4 className="hero-text md:text-6xl text-5xl text-white font-bold">
                 My Skills
               </h4>

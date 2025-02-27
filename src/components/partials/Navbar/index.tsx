@@ -1,14 +1,14 @@
 "use client";
 
-import NavLinks from "./NavLinks";
+// import NavLinks from "./NavLinks";
 import UserDropdown from "./UserDropdown";
 import Link from "next/link";
 
 const Navbar = () => {
-  const NavLink = [
-    { name: "Projects", href: "/projects" },
-    { name: "Blog", href: "/blog" },
-  ];
+  // const NavLink = [
+  //   { name: "Projects", href: "/projects" },
+  //   { name: "Blog", href: "/blog" },
+  // ];
 
   return (
     <nav className="bg-partials w-full rounded shadow-section border-2 border-black">
@@ -24,7 +24,7 @@ const Navbar = () => {
               </Link>
             </div>
           </div>
-          <NavLinks links={NavLink} />
+          {/* <NavLinks links={NavLink} /> */}
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             <UserDropdown username="test" image="" handleSignOut={() => {}} />
           </div>

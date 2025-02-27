@@ -13,7 +13,7 @@ const StackList = ({ stacks }: { stacks: Stack[] }) => {
       {stacks.map((stack, index) => (
         <div
           key={index}
-          className="bg-red-200 shadow-section border-2 border-black rounded p-4 text-black flex items-center justify-center text-center cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-105"
+          className="shadow-section border-2 border-black rounded p-4 text-black flex items-center justify-center text-center cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-105"
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
