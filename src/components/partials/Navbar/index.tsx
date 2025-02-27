@@ -1,7 +1,7 @@
 "use client";
 
 // import NavLinks from "./NavLinks";
-import UserDropdown from "./UserDropdown";
+// import UserDropdown from "./UserDropdown";
 import Link from "next/link";
 
 const Navbar = () => {
@@ -25,9 +25,9 @@ const Navbar = () => {
             </div>
           </div>
           {/* <NavLinks links={NavLink} /> */}
-          <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+          {/* <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             <UserDropdown username="test" image="" handleSignOut={() => {}} />
-          </div>
+          </div> */}
         </div>
       </div>
     </nav>
